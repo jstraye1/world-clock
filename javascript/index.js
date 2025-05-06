@@ -45,7 +45,8 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "h:mm:ss [<small>]A[</small>]"
           )}</div>
-        </div>`;
+        </div>
+        <a href="/">Back to Home</a>`;
   }
   updateDropdownTime();
   setInterval(updateDropdownTime, 1000);
