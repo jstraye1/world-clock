@@ -29,11 +29,12 @@ updateTime();
 setInterval(updateTime, 1000);
 
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
-  let cityTime = moment().tz(cityTimeZone);
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let citiesElement = document.querySelector("#cities-container");
-  citiesElement.innerHTML = `<div class="cities">
+  function updateDropdownTime() {
+    let cityTimeZone = event.target.value;
+    let cityTime = moment().tz(cityTimeZone);
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let citiesElement = document.querySelector("#cities-container");
+    citiesElement.innerHTML = `<div class="cities">
           <div>
             <h2>${cityName}</h2>
             <div class="date">${cityTime.format("MMMM D, YYYY")}</div>
@@ -42,6 +43,9 @@ function updateCity(event) {
             "h:mm:ss [<small>]A[</small>]"
           )}</div>
         </div>`;
+  }
+  updateDropdownTime();
+  setInterval(updateDropdownTime, 1000);
 }
 
 let citiesSelectElement = document.querySelector("#city");
