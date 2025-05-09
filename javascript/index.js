@@ -1,25 +1,36 @@
 function updateTime() {
-  //Los Angeles
-  let losAngelesElement = document.querySelector("#los-angeles");
-  if (losAngelesElement) {
-    let losAngelesDateElement = losAngelesElement.querySelector(".date");
-    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-    let losAngelesTime = moment().tz("America/Los_Angeles");
+  //New York
+  let newYorkElement = document.querySelector("#new-york");
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tz("America/New_York");
 
-    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM D, YYYY");
-    losAngelesTimeElement.innerHTML = `${losAngelesTime.format(
+    newYorkDateElement.innerHTML = newYorkTime.format("MMMM D, YYYY");
+    newYorkTimeElement.innerHTML = `${newYorkTime.format(
       "h:mm:ss [<small>]A[</small>]"
     )}`;
   }
-  //Paris
-  let parisElement = document.querySelector("#paris");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisTime = moment().tz("Europe/Paris");
+  //Berlin
+  let berlinElement = document.querySelector("#berlin");
+  if (berlinElement) {
+    let berlinDateElement = berlinElement.querySelector(".date");
+    let berlinTimeElement = berlinElement.querySelector(".time");
+    let berlinTime = moment().tz("Europe/Berlin");
 
-    parisDateElement.innerHTML = parisTime.format("MMMM D, YYYY");
-    parisTimeElement.innerHTML = `${parisTime.format(
+    berlinDateElement.innerHTML = berlinTime.format("MMMM D, YYYY");
+    berlinTimeElement.innerHTML = `${berlinTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    )}`;
+  }
+  let taipeiElement = document.querySelector("#taipei");
+  if (taipeiElement) {
+    let taipeiDateElement = taipeiElement.querySelector(".date");
+    let taipeiTimeElement = taipeiElement.querySelector(".time");
+    let taipeiTime = moment().tz("Asia/Taipei");
+
+    taipeiDateElement.innerHTML = taipeiTime.format("MMMM D, YYYY");
+    taipeiTimeElement.innerHTML = `${taipeiTime.format(
       "h:mm:ss [<small>]A[</small>]"
     )}`;
   }
